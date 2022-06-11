@@ -17,6 +17,11 @@ class stringElement():
     #This represents our object instead of printing just the memory location
     def __repr__(self):
         return 'object: {}'.format(self.stringVar)
+
+    #This allows you to add a string to the existing string
+    def __add__(self, otherString):
+        return self.stringVar + otherString
+
         
 
 
@@ -24,4 +29,8 @@ class stringElement():
 if __name__ == '__main__':
     string = stringElement("Hello")
 
-    print(string)
+    print(string + " Jay")
+
+"""
+Other dunder or Magic methods include __call__, __new__, __closure__, __len__
+"""
