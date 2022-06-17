@@ -49,3 +49,5 @@ def getMEX(a):
 
 if __name__ == "__main__":
     print(getMEX(l))
+
+#Going to try the hash method.
