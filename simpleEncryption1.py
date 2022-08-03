@@ -26,5 +26,23 @@ def encrypt(text, n):
         return new_text
 
 
+def decrypt(encrpyted_text, n):
+    if n <= 0:
+        return encrpyted_text
+    li = list(range(len(encrpyted_text)))
+    final_li = [
+        *sorted(filter(lambda x: x % 2, li)),
+        *sorted(filter(lambda x: x % 2 == 0, li)),
+    ]
+    thisdict = {}
+    num, i = 0, 0
+    while i < len(encrpyted_text):
+        thisdict.update({encrpyted_text[i]: final_li[i]})
+        i += 1
+
+    return thisdict, final_li
+
+
 if __name__ == "__main__":
-    print(encrypt("This is a test!", 2))
+    print(encrypt("Say God", 1))
+    print(decrypt("LLkjklmekfwejfjke", 1))
